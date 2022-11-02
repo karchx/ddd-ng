@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  angular-ui:
+    build:
+      context: ./dockerfiles
+      dockerfile: angular.dockerfile
+      args:
+        - UID=${UID:-1000}
+        - GID=${GID:-1000}
+    container_name: angular-ui
+    volumes:
+      - ./src:/app-ddd
+    working_dir: /app-ddd/ddd-ng
+    ports:
+      - 4200:4200
