@@ -14,3 +14,4 @@ services:
     working_dir: /app-ddd/ddd-ng
     ports:
       - 4200:4200
+    command: pnpm exec nx serve --host 0.0.0.0 --poll 2000

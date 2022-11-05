@@ -10,9 +10,9 @@ ENV PNPM_HOME=/usr/local/bin
 
 RUN corepack enable
 
-RUN SHELL=bash pnpm setup \
-    && source /root/.bashrc
-
+RUN SHELL=bash pnpm setup 
+#\
+#&& source /root/.bashrc
 
 RUN pnpm add -g @angular/cli
 
