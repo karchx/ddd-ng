@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ddd-ng/booking/feature-tickets": [
+        "libs/booking/feature-tickets/src/index.ts"
+      ],
       "@ddd-ng/shared/ui-shell": ["libs/shared/ui-shell/src/index.ts"]
     }
   },
