@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
 
@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: DashboardComponent
+  },
+  {
+    path: 'tickets',
+    loadChildren: () => import('@ddd-ng/booking/feature-tickets').then(m => m.TicketsModule)
   }
 ];
 
@@ -18,4 +22,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
