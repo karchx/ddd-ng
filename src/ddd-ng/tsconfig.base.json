@@ -19,6 +19,7 @@
       "@ddd-ng/booking/feature-tickets": [
         "libs/booking/feature-tickets/src/index.ts"
       ],
+      "@ddd-ng/booking/ui-common": ["libs/booking/ui-common/src/index.ts"],
       "@ddd-ng/shared/ui-shell": ["libs/shared/ui-shell/src/index.ts"]
     }
   },
