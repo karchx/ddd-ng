@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Flight} from '@ddd-ng/booking/domain';
+import {delay, Observable} from 'rxjs';
 import {TicketService} from './ticket.service';
 
 @Component({
@@ -7,20 +8,22 @@ import {TicketService} from './ticket.service';
   template: `
     <h2 class="title">{{ title }}</h2>
 
-    <ng-container *ngFor="let ticket of tickets">
-      <flight-card [item]="ticket" [showEditButton]="false"></flight-card>
-    </ng-container>
+    <div *ngIf="tickets$ | async as tickets; else loading">
+      <ng-container *ngFor="let ticket of tickets">
+        <flight-card [item]="ticket" [showEditButton]="false"></flight-card>
+      </ng-container>
+    </div>
+
+    <ng-template #loading>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </ng-template>
   `
 })
-export class MyTicketsComponent implements OnInit {
+export class MyTicketsComponent {
   @Input() title = 'My tickets';
   @Input() limit = -1;
 
-  tickets: Flight[] = [];
+  tickets$: Observable<Flight[]> = this.ticketService.get().pipe(delay(2000));
 
   constructor(private ticketService: TicketService) {}
-
-  ngOnInit(): void {
-    this.tickets = this.ticketService.get();
-  }
 }

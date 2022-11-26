@@ -1,5 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Flight} from "@ddd-ng/booking/domain";
+import {of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,9 @@ export class TicketService {
 
   get(limit: number = -1) {
     if (limit === -1) {
-      return this.tickets;
+      return of(this.tickets);
     }
 
-    return this.tickets.slice(0, limit);
+    return of(this.tickets.slice(0, limit));
   }
 }

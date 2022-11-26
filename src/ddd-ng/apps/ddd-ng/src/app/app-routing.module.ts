@@ -1,5 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {NextFlightComponent} from '@ddd-ng/booking/feature-tickets';
+
 import {DashboardComponent} from './dashboard/dashboard.component';
 
 const routes: Routes = [
@@ -15,6 +17,10 @@ const routes: Routes = [
   {
     path: 'tickets',
     loadChildren: () => import('@ddd-ng/booking/feature-tickets').then(m => m.TicketsModule)
+  },
+  {
+    path: 'next-flight',
+    component: NextFlightComponent
   }
 ];
 
