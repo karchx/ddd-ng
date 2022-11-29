@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@ddd-ng/booking/domain": ["libs/booking/domain/src/index.ts"],
+      "@ddd-ng/booking/feature-book": [
+        "libs/booking/feature-book/src/index.ts"
+      ],
       "@ddd-ng/booking/feature-tickets": [
         "libs/booking/feature-tickets/src/index.ts"
       ],
