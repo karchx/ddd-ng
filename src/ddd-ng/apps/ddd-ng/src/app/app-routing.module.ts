@@ -15,6 +15,10 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
+    path: 'flight-booking',
+    loadChildren: () => import('@ddd-ng/booking/feature-book').then(m => m.BookingFeatureBookModule)
+  },
+  {
     path: 'tickets',
     loadChildren: () => import('@ddd-ng/booking/feature-tickets').then(m => m.TicketsModule)
   },
