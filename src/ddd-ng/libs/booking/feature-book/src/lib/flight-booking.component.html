@@ -2,7 +2,7 @@
   <mat-card-content>
     <ul class="nav nav-secondary">
       <li routerLinkActive="active">
-        <a>Flight Search</a>
+        <a [routerLink]="['./flight-search']">Flight Search</a>
       </li>
 
       &nbsp; | &nbsp;
@@ -13,3 +13,5 @@
     </ul>
   </mat-card-content>
 </mat-card>
+
+<router-outlet></router-outlet>

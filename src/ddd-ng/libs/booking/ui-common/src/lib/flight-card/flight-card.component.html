@@ -1,6 +1,6 @@
 <mat-card [ngClass]="{ 'active-card' : selected }" class="mb-2">
   <mat-card-header>
-    <mat-card-title>{{ item.from }} - {{ item.to }}</mat-card-title>
+    <mat-card-title>{{ item.from | city:'short' }} - {{ item.to | city:'short' }}</mat-card-title>
   </mat-card-header>
 
   <mat-card-content>
