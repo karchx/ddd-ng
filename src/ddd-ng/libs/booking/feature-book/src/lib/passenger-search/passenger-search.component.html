@@ -1,0 +1,23 @@
+<h2>Passengers</h2>
+
+<form [formGroup]="formGroup">
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input
+      matInput
+      formControlName="name"
+      placeholder="name"
+    />
+  </mat-form-field>
+
+  <div>
+    <button
+        mat-flat-button
+        (click)="search()"
+        [disabled]="!formGroup.valid"
+        color="primary"
+    >
+      Search
+    </button>
+  </div>
+</form>

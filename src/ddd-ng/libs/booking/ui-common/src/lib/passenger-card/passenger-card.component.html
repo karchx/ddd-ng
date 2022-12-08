@@ -1,0 +1,24 @@
+<mat-card *ngIf="passenger">
+  <mat-card-header>
+    <mat-card-title>{{ passenger.name }}, {{ passenger.firstName }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>ID: {{ passenger.id }}</p>
+    <p>Firstname: {{ passenger.firstName }}</p> 
+    <p>Name: {{ passenger.name }}</p> 
+    <p>Bonus miles: {{ passenger.firstName }}</p> 
+    <p>Status: {{ passenger.passengerStatus }}</p> 
+
+    <div>
+      <button mat-flat-button (click)="downgrade.emit()" color="accent">
+        Downgrade
+      </button>
+      <button mat-flat-button (click)="upgrade.emit()" color="primary">
+        Upgrade
+      </button>
+    </div>
+  </mat-card-content>
+
+</mat-card>
+
